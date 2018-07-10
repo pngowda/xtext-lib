@@ -9,14 +9,14 @@ buildscript {
 	apply from: "${rootDir}/gradle/versions.gradle"
 	repositories.jcenter()
 	dependencies {
-		classpath "org.xtext:xtext-gradle-plugin:$versions.xtext_gradle_plugin"
-		classpath "io.typefox.gradle:gradle-p2gen:$versions.gradle_plugins"
+		//classpath "org.xtext:xtext-gradle-plugin:$versions.xtext_gradle_plugin"
+		//classpath "io.typefox.gradle:gradle-p2gen:$versions.gradle_plugins"
 	}
 }
 
 apply from: "${rootDir}/gradle/versions.gradle"
 apply from: "${rootDir}/gradle/bootstrap-setup.gradle"
-apply from: "${rootDir}/gradle/p2-deployment.gradle"
+//apply from: "${rootDir}/gradle/p2-deployment.gradle"
 
 ext.buildTime = DateTimeFormatter.ofPattern('yyyyMMdd-HHmm').format(LocalDateTime.now())
 
@@ -29,13 +29,13 @@ subprojects {
 	
 	apply plugin: 'java'
 	if (findProperty('compileXtend') == 'true') {
-		apply plugin: 'org.xtext.xtend'
+		//pply plugin: 'org.xtext.xtend'
 	}
 	apply plugin: 'eclipse'
 	apply plugin: 'maven'
 	
 	apply from: "${rootDir}/gradle/java-compiler-settings.gradle"
-	apply from: "${rootDir}/gradle/xtend-compiler-settings.gradle"
+	//apply from: "${rootDir}/gradle/xtend-compiler-settings.gradle"
 	apply from: "${rootDir}/gradle/maven-deployment.gradle"
 	apply from: "${rootDir}/gradle/eclipse-project-layout.gradle"
 	apply from: "${rootDir}/gradle/manifest-gen.gradle"
